@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies (none currently, but future-proof)
+node_modules/
+
+# Netlify
+.netlify/
+
+# Claude
+.claude/

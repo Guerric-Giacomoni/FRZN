@@ -1,0 +1,9 @@
+# Netlify configuration for the FRZN static site
+[build]
+  # No build step — plain HTML/CSS/JS served from the repo root
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

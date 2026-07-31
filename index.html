@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRZN™ — Engineered For Cold, Not For Crowd</title>
+  <meta name="description" content="FRZN builds extreme-cold puffer systems. ARTIC 01™ — seven pieces per drop, tested at −40°C and 4,800 m before a single unit ships. For users, not viewers.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FRZN™ — Engineered For Cold, Not For Crowd">
+  <meta property="og:description" content="Extreme-cold puffer systems. ARTIC 01™ — seven pieces per drop. Tested at −40°C before it is ever tested on a body.">
+  <meta property="og:image" content="./assets/img/scene-01-poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FRZN™ — Engineered For Cold, Not For Crowd">
+  <meta name="twitter:description" content="Extreme-cold puffer systems. ARTIC 01™ — seven pieces per drop.">
+  <meta name="twitter:image" content="./assets/img/scene-01-poster.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232C3742'/%3E%3Ctext x='32' y='42' font-family='Arial Black,sans-serif' font-size='26' font-weight='900' fill='%23F0F2F4' text-anchor='middle' letter-spacing='-2'%3EFRZN%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Critical hero CSS — inlined for LCP */
+    :root{--steel-deep:#2C3742;--ice:#F0F2F4;}
+    html{background:var(--steel-deep);}
+    body{margin:0;background:var(--steel-deep);}
+    .preloader{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;}
+    .preloader__half{position:absolute;left:0;width:100%;height:50%;background:var(--steel-deep);}
+    .preloader__half--top{top:0;}
+    .preloader__half--bottom{bottom:0;}
+    .hero{position:relative;height:100vh;overflow:hidden;}
+    .hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  </style>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type":"Product","name":"Aurora Silver","description":"Reflective puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-01-aurora-silver.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"999.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Orbit Silver","description":"High-gloss puffer. Extreme Cold Line, Series 01.","image":"./assets/img/product-02-orbit-silver.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"1299.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Stealth Black","description":"Heavy shield puffer. Extreme Cold Line, Series 01.","image":"./assets/img/product-03-stealth-black.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"1199.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Glacier White","description":"Insulated puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-04-glacier-white.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"1299.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Polar Gloss","description":"Blue puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-05-polar-gloss.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"899.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Icefield Blue","description":"Tech puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-06-icefield-blue.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"999.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Polar White","description":"Shell puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-07-polar-white.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"1499.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}},
+      {"@type":"Product","name":"Frost Blue","description":"Unit puffer jacket. Extreme Cold Line, Series 01.","image":"./assets/img/product-08-frost-blue.jpg","brand":{"@type":"Brand","name":"FRZN"},"offers":{"@type":"Offer","price":"999.99","priceCurrency":"USD","availability":"https://schema.org/LimitedAvailability"}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════ 00 · COLD BOOT PRELOADER ═══════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--top"></div>
+    <div class="preloader__half preloader__half--bottom"></div>
+    <div class="preloader__content">
+      <div class="preloader__readout mono" id="preloaderReadout"></div>
+      <div class="preloader__rule"><span id="preloaderRule"></span></div>
+    </div>
+    <div class="preloader__pct mono" id="preloaderPct">000</div>
+  </div>
+
+  <!-- custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursorDot"></div>
+    <div class="cursor__ring" id="cursorRing"><span class="cursor__label mono" id="cursorLabel"></span></div>
+  </div>
+
+  <!-- ═══════════ 01 · NAVIGATION ═══════════ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__mark" data-cursor="link" aria-label="FRZN home">FRZN</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#inventory" class="nav__link mono" data-cursor="link" data-flip="CATALOG"><span class="nav__bracket">[</span> CATALOG <span class="nav__bracket">]</span></a>
+      <a href="#featured" class="nav__link mono" data-cursor="link" data-flip="PUFFERS"><span class="nav__bracket">[</span> PUFFERS <span class="nav__bracket">]</span></a>
+      <a href="#pillars" class="nav__link mono" data-cursor="link" data-flip="SPEC"><span class="nav__bracket">[</span> SPEC <span class="nav__bracket">]</span></a>
+      <a href="#story" class="nav__link mono" data-cursor="link" data-flip="FIELD"><span class="nav__bracket">[</span> FIELD <span class="nav__bracket">]</span></a>
+    </nav>
+    <div class="nav__glyphs">
+      <button class="nav__glyph" data-cursor="link" data-magnetic aria-label="Search">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l4 4"/></svg>
+      </button>
+      <button class="nav__glyph" data-cursor="link" data-magnetic aria-label="Cart, 0 items">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor"><path d="M2 4h12l-1.5 8h-9L2 4z"/><path d="M5.5 4V3a2.5 2.5 0 0 1 5 0v1"/></svg>
+        <span class="nav__badge mono" id="cartBadge">0</span>
+      </button>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- mobile overlay -->
+  <div class="mnav" id="mnav" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#inventory" class="mnav__link"><span class="mono mnav__idx">01</span>CATALOG</a>
+      <a href="#featured" class="mnav__link"><span class="mono mnav__idx">02</span>PUFFERS</a>
+      <a href="#pillars" class="mnav__link"><span class="mono mnav__idx">03</span>SPEC</a>
+      <a href="#story" class="mnav__link"><span class="mono mnav__idx">04</span>FIELD</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════ 02 · HERO — SCENE 01 ═══════════ -->
+    <div class="hero-pin" id="heroPin">
+      <section class="hero" id="hero" aria-label="Collection Artic 01">
+        <video class="hero__video" id="heroVideo" muted playsinline preload="auto"
+               poster="./assets/img/scene-01-poster.jpg" width="1920" height="1080"
+               aria-label="Aerial push through a whiteout storm toward a lone figure in a glacier-white puffer on a frozen ridge"></video>
+        <div class="hero__overlay"></div>
+
+        <span class="hero__anno hero__anno--tl mono">[ FRZN UX INIT_01 ]</span>
+        <span class="hero__anno hero__anno--tr mono">[ VISUAL TEMP: −30° ]</span>
+
+        <div class="hero__content">
+          <h1 class="hero__h1 display">
+            <span class="mask"><span class="mask__inner">WARMTH IS</span></span>
+            <span class="mask"><span class="mask__inner">ENGINEERED</span></span>
+            <span class="mask"><span class="mask__inner" id="heroFrost">NOT WORN</span></span>
+          </h1>
+
+          <p class="hero__sub mono" id="heroSub">
+            <span class="hero__subline">Puffer systems calculated for performance — never appearance.</span>
+            <span class="hero__subtags">[ ARTIC 01™ ] · [ −40°C RATED ]</span>
+          </p>
+
+          <div class="hero__cta">
+            <button class="octa" data-cursor="link" data-magnetic data-add-cart aria-label="Add Artic 01 to cart">
+              <span class="octa__arrows"><span class="octa__arrow">↗</span><span class="octa__arrow octa__arrow--dupe">↗</span></span>
+            </button>
+            <div class="hero__price mono">
+              <span>ADD TO CART</span>
+              <span class="hero__amount">$899.99</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__rail" aria-label="Collection previews">
+          <figure class="hero__thumb"><img src="./assets/img/product-01-aurora-silver.jpg" alt="Aurora Silver — reflective puffer, hood up, series 01" width="120" height="160" decoding="async"></figure>
+          <figure class="hero__thumb"><img src="./assets/img/product-06-icefield-blue.jpg" alt="Icefield Blue — tech puffer, hood up, series 01" width="120" height="160" decoding="async"></figure>
+          <div class="hero__pag mono">01 <span class="hero__pagrule"></span> 07</div>
+        </aside>
+
+        <div class="hero__social">
+          <a href="#" class="nav__glyph" data-cursor="link" aria-label="Instagram"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor"><rect x="1.5" y="1.5" width="13" height="13" rx="3.5"/><circle cx="8" cy="8" r="3"/><circle cx="12" cy="4" r="0.8" fill="currentColor"/></svg></a>
+          <a href="#" class="nav__glyph" data-cursor="link" aria-label="X"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor"><path d="M2 2l12 12M14 2L2 14"/></svg></a>
+        </div>
+
+        <div class="hero__scroll mono">SCROLL<span class="hero__scrollrule"></span></div>
+      </section>
+    </div>
+
+    <!-- ═══════════ 03 · ANIMATED STATS STRIP ═══════════ -->
+    <section class="stats" id="stats" aria-label="Field specifications">
+      <div class="stats__track" id="statsTrack">
+        <div class="stats__cell"><span class="stats__num display" data-count="-40" data-suffix="°C">−40°C</span><span class="stats__label mono mask"><span class="mask__inner">RATED TEMPERATURE</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="800">800</span><span class="stats__label mono mask"><span class="mask__inner">FILL POWER</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="7" data-pad="2">07</span><span class="stats__label mono mask"><span class="mask__inner">PIECES PER DROP</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="12">12</span><span class="stats__label mono mask"><span class="mask__inner">FIELD CYCLES</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="36" data-suffix=" HR">36 HR</span><span class="stats__label mono mask"><span class="mask__inner">SUB-ZERO ENDURANCE TEST</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="100" data-suffix="%">100%</span><span class="stats__label mono mask"><span class="mask__inner">RECYCLED SHELL</span></span></div>
+        <div class="stats__cell"><span class="stats__num display" data-count="4800" data-group data-suffix=" M">4,800 M</span><span class="stats__label mono mask"><span class="mask__inner">MAX TESTED ALTITUDE</span></span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 04 · MISSION / MANIFESTO ═══════════ -->
+    <section class="mission" id="mission" aria-label="Mission">
+      <div class="mission__head">
+        <h2 class="mission__h2 display">
+          <span class="mask"><span class="mask__inner">FOR USERS,</span></span>
+          <span class="mask"><span class="mask__inner">NOT VIEWERS</span></span>
+        </h2>
+        <p class="mission__aside mono">UI CALIBRATED FOR COLD INTERACTION — ZERO DISTRACTION. FULL FOCUS ON PRODUCT MASS.</p>
+      </div>
+
+      <div class="mission__split">
+        <span class="mono mission__label">[ MISSION ]</span>
+        <p class="mission__body mono" data-words>
+          Fashion stole the puffer and threw away the engineering. FRZN is the correction. We don't follow seasons — we engineer gear for cold, altitude and absolute function. Every panel, stitch and volume is calculated for performance, not appearance. Our pieces are built to withstand sub-zero environments, high winds, and the silence that only exists above the cloud line. The silhouette is a byproduct. We make gear that earns its shape.
+        </p>
+      </div>
+
+      <div class="mission__pull" aria-hidden="true">
+        <div class="mission__pulltrack display" id="missionPull">
+          <span>ENGINEERED FOR COLD · NOT FOR CROWD ·&nbsp;</span>
+          <span>ENGINEERED FOR COLD · NOT FOR CROWD ·&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 05 · THREE PILLARS ═══════════ -->
+    <section class="pillars" id="pillars" aria-label="Three pillars">
+      <!-- sticky numeral: holds position while the copy scrolls past it -->
+      <div class="pillars__index" aria-hidden="true">
+        <div class="pillars__roll">
+          <div class="pillars__numtrack" id="pillarRoll">
+            <span class="pillars__num display">01</span>
+            <span class="pillars__num display">02</span>
+            <span class="pillars__num display">03</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillars__track">
+        <article class="pillar" data-pillar>
+          <span class="mono pillar__anno">[ PILLAR / 01 ]</span>
+          <h3 class="pillar__title display"><span class="mask"><span class="mask__inner">THERMAL ARCHITECTURE</span></span></h3>
+          <p class="pillar__body mono">The engineering. 800-fill loft, welded baffle geometry, and sub-zero shell systems developed to trap heat without trapping movement. Nothing on the garment exists for decoration.</p>
+          <div class="pillar__chips"><span class="chip mono">[ SPEC ]</span><span class="chip mono">[ LOFT ]</span><span class="chip mono">[ SHELL ]</span><span class="chip mono">[ SEAM ]</span></div>
+        </article>
+        <article class="pillar" data-pillar>
+          <span class="mono pillar__anno">[ PILLAR / 02 ]</span>
+          <h3 class="pillar__title display"><span class="mask"><span class="mask__inner">THE EXTREME COLD LINE</span></span></h3>
+          <p class="pillar__body mono">The product. ARTIC 01™, AURORA™, Stealth Black, Icefield Blue. Seven pieces per drop. When they're gone, the series closes. We don't restock. We iterate.</p>
+          <div class="pillar__chips"><span class="chip mono">[ SERIES 01 ]</span><span class="chip mono">[ 07 PIECES ]</span><span class="chip mono">[ NO RESTOCK ]</span></div>
+        </article>
+        <article class="pillar" data-pillar>
+          <span class="mono pillar__anno">[ PILLAR / 03 ]</span>
+          <h3 class="pillar__title display"><span class="mask"><span class="mask__inner">FIELD PROVEN</span></span></h3>
+          <p class="pillar__body mono">The proof. Twelve field cycles, tested to 4,800 metres and −40°C before a single unit ships. Every piece that reaches you already came back down.</p>
+          <div class="pillar__chips"><span class="chip mono">[ ALTITUDE ]</span><span class="chip mono">[ −40°C ]</span><span class="chip mono">[ 36 HR ]</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════ 06 · KINETIC TYPE + SCENE 02 ═══════════ -->
+    <div class="kinetic-pin" id="kineticPin">
+      <section class="kinetic" id="kinetic" aria-label="When the cold hits">
+        <h2 class="kinetic__h2 display" id="kineticBack">
+          <span>WHEN THE COLD</span>
+          <span>HITS, EVERYTHING</span>
+          <span>ELSE GOES <em class="kinetic__quiet" id="kineticQuiet">QUIET</em></span>
+        </h2>
+
+        <img class="kinetic__jacket" id="kineticJacket" src="./assets/img/jacket-float.webp"
+             alt="An empty FRZN puffer jacket suspended and twisting in mid-air" width="1200" height="1200"
+             loading="lazy" decoding="async">
+
+        <h3 class="kinetic__h3 display" id="kineticFront">
+          <span>YOU DON'T FEEL</span>
+          <span>COLD YOU FEEL LESS</span>
+        </h3>
+
+        <img class="kinetic__tag" id="kineticTag" src="./assets/img/tag.png" alt="" width="420" height="240" loading="lazy" decoding="async" aria-hidden="true">
+
+        <div class="kinetic__cta">
+          <button class="octa" data-cursor="link" data-magnetic data-add-cart aria-label="Add to cart">
+            <span class="octa__arrows"><span class="octa__arrow">↗</span><span class="octa__arrow octa__arrow--dupe">↗</span></span>
+          </button>
+          <div class="hero__price mono"><span>ADD TO CART</span><span class="hero__amount">$999.99</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════ 07 · STORY ═══════════ -->
+    <section class="story" id="story" aria-label="Origin story">
+      <svg class="story__topo" id="storyTopo" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M-50,620 C150,560 280,640 460,590 S760,510 940,570 S1150,620 1260,580"/>
+          <path d="M-50,560 C160,500 300,580 470,530 S750,450 950,510 S1160,560 1260,520"/>
+          <path d="M-50,500 C170,440 320,520 480,470 S740,390 960,450 S1170,500 1260,460"/>
+          <path d="M-50,440 C180,380 340,460 490,410 S730,330 970,390 S1180,440 1260,400"/>
+          <path d="M-50,380 C190,320 360,400 500,350 S720,270 980,330 S1190,380 1260,340"/>
+          <path d="M-50,320 C200,260 380,340 510,290 S710,210 990,270 S1200,320 1260,280"/>
+          <path d="M-50,260 C210,200 400,280 520,230 S700,150 1000,210 S1210,260 1260,220"/>
+          <path d="M-50,200 C220,140 420,220 530,170 S690,90 1010,150 S1220,200 1260,160"/>
+        </g>
+      </svg>
+
+      <span class="mono story__label">[ ORIGIN / 001 ]</span>
+      <h2 class="story__h2 display">
+        <span class="mask"><span class="mask__inner">BORN IN THE MOUNTAINS.</span></span>
+        <span class="mask"><span class="mask__inner">NOT AS A TREND.</span></span>
+        <span class="mask"><span class="mask__inner">AS A RESPONSE.</span></span>
+      </h2>
+
+      <div class="story__bodywrap">
+        <p class="story__body mono" data-words>We were above the cloud line when the gear failed. Wrong loft, wrong shell, wrong everything. So we built our own.</p>
+        <p class="story__body mono" data-words>Three years. Twelve field cycles. One obsession — total thermal silence. Every piece is tested at −40°C before it is ever tested on a body. We don't design for the season. We design for the one percent of days that break everything else.</p>
+      </div>
+
+      <div class="story__timeline" id="storyTimeline">
+        <span class="story__timetrack" aria-hidden="true"></span>
+        <span class="story__timedraw" id="storyTimedraw" aria-hidden="true"></span>
+        <div class="story__node mono">
+          <span class="story__dot" aria-hidden="true"></span>
+          <span class="story__year">2021</span>
+          <span class="story__label">FAILURE AT ALTITUDE</span>
+        </div>
+        <div class="story__node mono">
+          <span class="story__dot" aria-hidden="true"></span>
+          <span class="story__year">2022</span>
+          <span class="story__label">FIRST BAFFLE PROTOTYPE</span>
+        </div>
+        <div class="story__node mono">
+          <span class="story__dot" aria-hidden="true"></span>
+          <span class="story__year">2023</span>
+          <span class="story__label">FIELD CYCLE 07 / −40°C</span>
+        </div>
+        <div class="story__node mono">
+          <span class="story__dot" aria-hidden="true"></span>
+          <span class="story__year">2025</span>
+          <span class="story__label">ARTIC 01™ RELEASED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 08 · COLD OPS INVENTORY ═══════════ -->
+    <section class="inventory" id="inventory" aria-label="Cold Ops Inventory">
+      <div class="inventory__head">
+        <h2 class="inventory__h2 display"><span class="mask"><span class="mask__inner">COLD OPS INVENTORY</span></span></h2>
+        <button class="pill mono" data-cursor="link" data-magnetic>FILTERS</button>
+      </div>
+      <div class="inventory__taxo mono">
+        <div><span>[ NEW COLLECTION ]</span><span>[ SERIES_01 ]</span><span>[ PUFFERS ]</span></div>
+        <div class="inventory__taxo2">PUFFER JACKETS / METAL EDITION / GLOSS SERIES / EXTREME COLD LINE</div>
+      </div>
+
+      <div class="inventory__grid inventory__grid--3" id="gridFeature">
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-01-aurora-silver.jpg" alt="Aurora Silver reflective puffer — hood up, built for the cold line" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">AURORA SILVER</h3>
+          <p class="card__desc mono">REFLECTIVE PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#E8EAEC" data-name="WHITE"></span> WHITE <span class="swatch" style="--sw:#7A8A99" data-name="BLUE"></span> BLUE</span><span class="card__price">$999.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-02-orbit-silver.jpg" alt="Orbit Silver high-gloss puffer — series 01, no restock" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">ORBIT SILVER</h3>
+          <p class="card__desc mono">HIGH-GLOSS PUFFER</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#C6CDD3" data-name="SILVER"></span> SILVER</span><span class="card__price">$1,299.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-03-stealth-black.jpg" alt="Stealth Black heavy shield puffer — rated to minus forty" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">STEALTH BLACK</h3>
+          <p class="card__desc mono">HEAVY SHIELD PUFFER</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#1E2830" data-name="BLACK"></span> BLACK <span class="swatch" style="--sw:#E8EAEC" data-name="WHITE"></span> WHITE</span><span class="card__price">$1,199.99</span></div>
+        </article>
+      </div>
+
+      <div class="inventory__grid inventory__grid--5" id="gridRow">
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-04-glacier-white.jpg" alt="Glacier White insulated puffer — field cycle tested" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">GLACIER WHITE</h3>
+          <p class="card__desc mono">INSULATED PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#9AA7B2" data-name="GREY"></span> GREY</span><span class="card__price">$1,299.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-05-polar-gloss.jpg" alt="Polar Gloss blue puffer — gloss series" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">POLAR GLOSS</h3>
+          <p class="card__desc mono">BLUE PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#4A6478" data-name="BLUE GLOSS"></span> BLUE GLOSS</span><span class="card__price">$899.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-06-icefield-blue.jpg" alt="Icefield Blue tech puffer — altitude tested" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">ICEFIELD BLUE</h3>
+          <p class="card__desc mono">TECH PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#6B7C8C" data-name="BLUE"></span> BLUE</span><span class="card__price">$999.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-07-polar-white.jpg" alt="Polar White shell puffer — extreme cold line" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">POLAR WHITE</h3>
+          <p class="card__desc mono">SHELL PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#EDEFF1" data-name="WHITE"></span> WHITE</span><span class="card__price">$1,499.99</span></div>
+        </article>
+        <article class="card" data-cursor="card" data-colorway>
+          <div class="card__panel"><img src="./assets/img/product-08-frost-blue.jpg" alt="Frost Blue unit puffer — series 01" width="600" height="800" loading="lazy" decoding="async"><span class="card__view mono">[ VIEW ↗ ]</span><svg class="card__outline" aria-hidden="true"><rect x="0.5" y="0.5" width="100%" height="100%" /></svg></div>
+          <h3 class="card__name mono">FROST BLUE</h3>
+          <p class="card__desc mono">UNIT PUFFER JACKET</p>
+          <div class="card__meta mono"><span class="card__swatches"><span class="swatch" style="--sw:#8FA3B3" data-name="FROST"></span> FROST <span class="swatch" style="--sw:#5C6E7E" data-name="COLD"></span> COLD</span><span class="card__price">$999.99</span></div>
+        </article>
+      </div>
+      <div class="inventory__readout mono" id="carouselReadout" aria-hidden="true">01 / 08</div>
+    </section>
+
+    <!-- ═══════════ 09 · FEATURED — AURORA™ ═══════════ -->
+    <section class="featured" id="featured" aria-label="Featured — Aurora">
+      <div class="featured__grid">
+        <figure class="featured__media">
+          <img src="./assets/img/featured-aurora.jpg" alt="Aurora — reflective puffer seen from behind against a tagged wall" width="900" height="1200" loading="lazy" decoding="async">
+          <img class="featured__tag" src="./assets/img/tag.png" alt="" width="300" height="170" loading="lazy" decoding="async" aria-hidden="true">
+        </figure>
+        <div class="featured__detail">
+          <span class="mono featured__anno">[ FEATURED / SERIES 01 ]</span>
+          <h2 class="featured__h2 display"><span class="mask"><span class="mask__inner">AURORA<sup>™</sup></span></span></h2>
+          <p class="featured__body mono">Reflective shell. 800 fill. Built for the coldest hour of the climb — the one where everything else gives up.</p>
+          <div class="hero__cta">
+            <button class="octa" data-cursor="link" data-magnetic data-add-cart aria-label="Add Aurora to cart">
+              <span class="octa__arrows"><span class="octa__arrow">↗</span><span class="octa__arrow octa__arrow--dupe">↗</span></span>
+            </button>
+            <div class="hero__price mono"><span>ADD TO CART</span><span class="hero__amount">$1,999</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="featured__marquee" aria-hidden="true">
+        <div class="featured__marqueetrack mono" id="featuredMarquee">
+          <span>[ 800 FILL ] · [ WELDED BAFFLE ] · [ −40°C RATED ] · [ RECYCLED SHELL ] · [ SERIES 01 ] · [ 07 PIECES ] · [ ALTITUDE TESTED ] ·&nbsp;</span>
+          <span>[ 800 FILL ] · [ WELDED BAFFLE ] · [ −40°C RATED ] · [ RECYCLED SHELL ] · [ SERIES 01 ] · [ 07 PIECES ] · [ ALTITUDE TESTED ] ·&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 10 · FINAL CTA — SCENE 03 ═══════════ -->
+    <div class="final-pin" id="finalPin">
+      <section class="final" id="final" aria-label="Built for cold">
+        <video class="final__video" id="finalVideo" muted playsinline preload="metadata"
+               poster="./assets/img/scene-03-poster.jpg" width="1920" height="1080"
+               aria-label="An operator in an icefield-blue puffer walks toward camera through deep snow and stops as the wind drops"></video>
+        <div class="final__overlay"></div>
+
+        <div class="final__annos mono">
+          <span>[ PROTOCOL: ALTITUX ]</span>
+          <span>[ FOR THOSE WHO CLIMB, NOT THE CROWD ]</span>
+        </div>
+
+        <h2 class="final__h2 display">
+          <span class="mask"><span class="mask__inner">BUILT FOR COLD</span></span>
+          <span class="mask"><span class="mask__inner">MADE FOR HEIGHT</span></span>
+          <span class="mask"><span class="mask__inner">FORGED TO LAST</span></span>
+        </h2>
+
+        <div class="final__ctas">
+          <a href="#inventory" class="btn-octa mono" data-cursor="link" data-magnetic>SHOP ARTIC 01<sup>™</sup><span class="btn-octa__fill" aria-hidden="true"></span></a>
+          <button class="btn-ghost mono" id="joinDrop" data-cursor="link" aria-expanded="false">[ JOIN THE DROP ]</button>
+        </div>
+
+        <form class="final__form mono" id="dropForm" hidden novalidate>
+          <!-- POST hook: wire this form's submit to your list endpoint, e.g. fetch('https://api.frzn.example/drop', {method:'POST', body: new FormData(form)}) -->
+          <label class="final__formlabel" for="dropEmail">TRANSMISSION</label>
+          <input class="final__input" id="dropEmail" type="email" placeholder="ENTER EMAIL" autocomplete="email" required>
+          <span class="final__invalid mono" id="dropInvalid" hidden>[ INVALID FORMAT ]</span>
+          <button class="btn-ghost mono" type="submit">REGISTER</button>
+        </form>
+        <p class="final__confirm mono" id="dropConfirm" hidden>[ REGISTERED ] YOU'LL BE FIRST INTO THE COLD.</p>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ═══════════ 11 · FOOTER ═══════════ -->
+  <footer aria-label="Footer">
+    <!-- closing frame: graffiti tag + tagline over the range -->
+    <div class="fclose" id="fclose">
+      <img class="fclose__mountain" id="fcloseMountain" src="./assets/img/mountain-footer.jpg"
+           alt="Snow-covered mountain range under a cold overcast sky" width="2048" height="1152"
+           loading="lazy" decoding="async">
+      <div class="fclose__overlay"></div>
+
+      <span class="fclose__tag" id="fcloseTag" role="img" aria-label="FRZN graffiti tag"></span>
+
+      <nav class="fclose__nav mono" aria-label="Footer">
+        <a href="#inventory" data-cursor="link">[ CATALOG ]</a>
+        <a href="#featured" data-cursor="link">[ PUFFERS ]</a>
+        <a href="#pillars" data-cursor="link">[ SPEC ]</a>
+        <a href="#story" data-cursor="link">[ ORIGIN ]</a>
+        <a href="#mission" data-cursor="link">[ MISSION ]</a>
+      </nav>
+
+      <div class="fclose__anno fclose__anno--tr mono">
+        <span>[ FOR THOSE WHO CLIMB,</span>
+        <span>NOT THE CROWD ]</span>
+      </div>
+
+      <h2 class="fclose__tagline display" id="fcloseTagline">
+        <span class="mask"><span class="mask__inner">BUILT FOR COLD</span></span>
+        <span class="mask"><span class="mask__inner">MADE FOR HEIGHT</span></span>
+        <span class="mask"><span class="mask__inner">FORGED TO LAST</span></span>
+      </h2>
+
+      <div class="fclose__stamp mono">
+        <svg class="futility__barcode" viewBox="0 0 120 28" aria-hidden="true">
+          <g fill="currentColor">
+            <rect x="0" width="2" height="28"/><rect x="4" width="1" height="28"/><rect x="7" width="3" height="28"/><rect x="12" width="1" height="28"/><rect x="15" width="2" height="28"/><rect x="19" width="4" height="28"/><rect x="25" width="1" height="28"/><rect x="28" width="2" height="28"/><rect x="32" width="1" height="28"/><rect x="35" width="3" height="28"/><rect x="40" width="2" height="28"/><rect x="44" width="1" height="28"/><rect x="47" width="4" height="28"/><rect x="53" width="1" height="28"/><rect x="56" width="2" height="28"/><rect x="60" width="3" height="28"/><rect x="65" width="1" height="28"/><rect x="68" width="2" height="28"/><rect x="72" width="1" height="28"/><rect x="75" width="4" height="28"/><rect x="81" width="2" height="28"/><rect x="85" width="1" height="28"/><rect x="88" width="3" height="28"/><rect x="93" width="1" height="28"/><rect x="96" width="2" height="28"/><rect x="100" width="1" height="28"/><rect x="103" width="4" height="28"/><rect x="109" width="1" height="28"/><rect x="112" width="2" height="28"/><rect x="116" width="3" height="28"/>
+          </g>
+        </svg>
+        <span>PROTOCOL: ALTITUX / SERIES 01</span>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- global texture -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script defer src="./script.js"></script>
+</body>
+</html>
